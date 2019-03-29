@@ -5,3 +5,8 @@
 build
 
 .vscode
+
+.project
+
+.classpath
+.settings
