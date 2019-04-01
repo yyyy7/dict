@@ -5,8 +5,15 @@ public class JsonAccepter {
   public String errorCode;
   public String query;
   public String[] translation;
+  public Basic basic;
+  public Web[] web;
+  public Dict dict;
+  public Webdict webdict;
+  public String l; 
+  public String tSpeakUrl;
+  public String speakUrl;
 
-  class basic {
+  static class Basic {
     public String phonetic;
     public String ukphonetic;
     public String usphonetic;
@@ -15,23 +22,19 @@ public class JsonAccepter {
     public String[] explains; 
   }
 
-  Web[] web;
-  class Web {
+  static class Web {
     public String key;
     public String[] value;
   }
 
-  class dict {
+  static class Dict {
     public String url;
   }
 
-  class webdict {
+  static class Webdict {
     public String url;
   }
 
-  public String l; 
-  public String tSpeakUrl;
-  public String speakUrl;
 
 }
 

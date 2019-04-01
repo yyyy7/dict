@@ -21,6 +21,11 @@ public class Dict {
   private static final String APP_KEY = "14240d2ebe4b8336";
   private static final String APP_SECRET = "STdxLa3CuwSxeeWrFzSVbLlVoC8VN94c";
 
+  // * 彩色化终端输出
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_YELLOW = "\u001B[33m";
+  public static final String ANSI_BLUE = "\u001B[34m";
+
   public static void run(String ...args) {
     try {
       String params = buildParams(args[0]);
@@ -62,7 +67,10 @@ public class Dict {
   private static void print(String content) {
     JsonAccepter jsonAccepter = new Gson().fromJson(content, JsonAccepter.class); 
     System.out.println(
-      Arrays.stream(jsonAccepter.translation).collect(Collectors.joining(", "))
+      ANSI_BLUE +
+      Arrays.stream(jsonAccepter.basic.explains)
+            .collect(Collectors.joining(", "))
+      + ANSI_RESET
       );
   }
 
