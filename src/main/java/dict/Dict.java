@@ -69,8 +69,8 @@ public class Dict {
   private static String buildParams(String q) throws UnsupportedEncodingException {
     Map<String, String> params = new HashMap<>();
     params.put("q", q);
-    params.put("from", "en");
-    params.put("to", "zh-CHS");
+    params.put("from", "auto");
+    params.put("to", "auto");
     params.put("signType", "v3");
     String salt = String.valueOf(System.currentTimeMillis());
     String curtime = String.valueOf(System.currentTimeMillis() / 1000);
